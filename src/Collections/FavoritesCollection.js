@@ -27,11 +27,11 @@ let pageId = 1;
 class FavoritesCollection extends React.Component {
 
   getData(pageNumber) {
-    let { user_id, item_type, item_id } = this.props;
+    let { user_id, item_type, item_id, per_page } = this.props;
     let Meta = {
       query: {
         page: pageNumber,
-        per_page: 8
+        per_page: per_page || 8
       },
       path: this.props.path || "/favorites/"
     }
